@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Preahvihear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Preahvihear&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cabecalho{
+    background-color: #1a0b2e;
+    height: 65px;
+    width: 100%;
+}
+
+.cabecalho__menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho__menu_logo{
+    height: 40px;
+    margin-right: 20px;
+    padding: 0 250px;
+}
+
+.cabecalho__menu__links{
+    display: flex;
+    gap: 100px;
+    padding: 0 200px;
+}
+
+.cabecalho__menu__link {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 21.5px 0;
+    color: white;
+    text-decoration: none;
+    position: relative; 
+}
+
+.cabecalho__menu__link:hover {
+    color: #eddffa;
+    text-shadow: 0 0 10px #ab57ff; 
+}
+
+.cabecalho__menu__link::after {
+    content: '';
+    position: absolute; 
+    bottom: 6px;
+    left: 50%;
+    height: 0;
+    width: 10px;
+    background-color: #ab57ffBA;
+    border-radius: 50%;
+    transition: all 300ms ease; 
+    transform: translateX(-50%); 
+}
+
+.cabecalho__menu__link:hover::after {
+    height: 10px;
+}
+
+body{
+    background-color: #13071F;
+    height: 10px; 
+    box-shadow: 0 0 15px #ab57ff;
+}
+
+.hello{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding: 118px 500px 120px 395px;
+}
+
+.hello_imagem{
+    position: relative;
+    display: inline-block;
+}
+
+.hello_radial{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hello_memoji{
+    z-index: 1;
+    display: block;
+    width: 165px;
+    /*filter: drop-shadow(0 0 50px #c58affa4);*/
+}
+
+.hello_texto{
+    width: 400px;
+}
+
+.hello_paragrafo{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+}
+
+.hello_h1{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 50px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    line-height: 126.7%;
+}
+
+.hello_h1_destaque {
+    position: relative;
+    color: #7127BA;
+    display: inline-block; 
+    padding: 0.1em 0.25em; 
+  }
+  
+  .hello_h1_destaque:before,
+  .hello_h1_destaque:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50%;
+    opacity: 0.7;
+  }
+  
+  .hello_h1_destaque:before {
+    left: -0.05em;
+    top: 0.05em;
+    border-right-color: transparent;
+    border-color: white;
+    width: 100%;
+    height: 1.3em;
+    transform: rotate(3deg);
+  }
+  
+  .hello_h1_destaque:after {
+    left: -0.1em;
+    top: 0.1em;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    border-color: white;
+    width: 100%;
+    height: 1.2em;
+    transform: rotate(-3deg);
+  }
+
+.hello_h2{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 11px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+}
+
+.apresentacao{
+    padding: 0 400px 0 430px;
+}
+
+.apresentacao_h1{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 50px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    line-height: 126.7%;
+    
+}
+
+.apresentacao_h2{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 21px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+}
+
+.apresentacao_paragrafo{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    padding: 35px 0;
+}
+
+.skills{
+    padding: 60px 400px 0 430px;
+    height: 600px;
+    background-image: url("/img/gradient.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.skills_h1{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 40px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    line-height: 126.7%;
+    text-align: center;
+}
+
+.skills_apresentacao {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 64px;
+    width: 100%;
+}
+
+.skills_row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skills_container {
+    background-color: rgba(171, 87, 255, 0.2);
+    border-radius: 100px;
+    padding: 30px;
+    box-shadow: 0 0 15px #13071f46;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skills_container:hover{
+    transform: scale(1.1);
+}
+
+.skills_container img {
+    height: 100px;
+    align-content: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/*.skills_container img:hover{
+        transform: scale(1.2);
+
+}*/
+
+.projetos {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.projetos_1, .projetos_2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding-bottom: 70px;
+}
+
+.projetos_h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #9857D3;
+    letter-spacing: 2%;
+    padding: 0 2%;
+}
+
+.projetos_h1 {
+    font-family: "Preahvihear", sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    padding: 0 2%;
+}
+
+.projetos_2_h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #9857D3;
+    letter-spacing: 2%;
+    text-align: right;
+    padding: 0 2%;
+}
+
+.projetos_2_h1{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    text-align: right;
+    padding: 0 2%;
+}
+
+.bloco_texto {
+    flex: 1;
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Desfoca o fundo */
+    -webkit-backdrop-filter: blur(10px); /* Para suporte ao Safari */
+    border-radius: 10px; /* Arredonda os cantos do contêiner */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+    margin: 0 20px; /* Adiciona espaço entre o texto e a imagem */
+}
+
+.projetos_paragrafo {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    letter-spacing: 2%;
+    padding: 26px 34px;
+    margin: 0;
+}
+
+.projetos_imagem{
+    position: relative;
+    display: inline-block;
+}
+
+.projetos_radial{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 600px;
+    height: 500px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.projetos_print {
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.rodape{
+    background-color: #1a0b2e;
+    height: 65px;
+    width: 100%;
+}
