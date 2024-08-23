@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .cabecalho{
     background-color: #1a0b2e;
     height: 65px;
