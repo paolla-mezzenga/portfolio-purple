@@ -27,13 +27,13 @@ html {
 .cabecalho__menu_logo{
     height: 40px;
     margin-right: 20px;
-    padding: 0 250px;
+    padding: 0 250px 0 200px;
 }
 
 .cabecalho__menu__links{
     display: flex;
-    gap: 100px;
-    padding: 0 200px;
+    gap: 80px;
+    padding-right: 200px;
 }
 
 .cabecalho__menu__link {
@@ -47,32 +47,36 @@ html {
 }
 
 .cabecalho__menu__link:hover {
-    color: #eddffa;
     text-shadow: 0 0 10px #ab57ff; 
 }
 
 .cabecalho__menu__link::after {
     content: '';
-    position: absolute; 
-    bottom: 6px;
-    left: 50%;
-    height: 0;
-    width: 10px;
-    background-color: #ab57ffBA;
-    border-radius: 50%;
-    transition: all 300ms ease; 
-    transform: translateX(-50%); 
+    position: absolute;
+    bottom: 15px; /* Posiciona a linha na parte inferior do link */
+    left: 50%; /* Inicia a linha no centro */
+    width: 0; /* Largura inicial da linha */
+    height: 2px; /* Espessura da linha */
+    background-color: #ab57ffBA; /* Cor da linha */
+    transition: all 300ms ease; /* Suavidade na transição */
+    transform: translateX(-50%); /* Centraliza o início da linha */
 }
 
 .cabecalho__menu__link:hover::after {
-    height: 10px;
+    width: 100%; /* Expande a linha para cobrir toda a largura do link */
+    left: 50%; /* Mantém o centro do link */
+    transform: translateX(-50%); /* Mantém a linha centralizada */
+}
+
+.cabecalho__menu__link:hover::after {
+    width: 100%; /* Expande a linha para cobrir toda a largura do link */
 }
 
 body{
     background-color: #13071F;
-    height: 10px; 
-    box-shadow: 0 0 15px #ab57ff;
 }
+
+
 
 .hello{
     display: flex;
@@ -80,13 +84,54 @@ body{
     justify-content: center;
     align-items: center;
     gap: 35px;
-    padding: 118px 500px 120px 395px;
+    padding: 130px 0 100px 0;
 }
 
-.hello_imagem{
+.hello_imagem {
     position: relative;
     display: inline-block;
 }
+
+.hello_arrow {
+    position: absolute;
+    top: -93px; /* Ajuste conforme necessário */
+    left: 95px; /* Ajuste conforme necessário */
+    width: 100px; /* Ajuste o tamanho da seta conforme necessário */
+    transform: rotate(0deg); /* Rotacione a seta conforme necessário */
+}
+
+
+.hello_seta_texto {
+    position: absolute;
+    top: -40%;
+    left: 188%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hello_seta_texto_destaque{
+    color: #7127BA;
+}
+
+.seta {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid white;
+}
+
+.hello_seta_texto_paragrafo {
+    font-family: "Preahvihear", sans-serif;
+    font-size: 14px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    white-space: nowrap;
+}
+
 
 .hello_radial{
     position: absolute;
@@ -174,7 +219,16 @@ body{
 }
 
 .apresentacao{
-    padding: 0 400px 0 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
+
+}
+
+.apresentacao_container{
+    margin-bottom: 50px;
+    padding-left: 50px;
 }
 
 .apresentacao_h1{
@@ -184,7 +238,6 @@ body{
     font-weight: 400;
     letter-spacing: 2%;
     line-height: 126.7%;
-    
 }
 
 .apresentacao_h2{
@@ -202,15 +255,152 @@ body{
     font-weight: 400;
     letter-spacing: 2%;
     padding: 35px 0;
+    width: 700px;
 }
 
-.skills{
-    padding: 60px 400px 0 430px;
-    height: 600px;
-    background-image: url("/img/gradient.png");
-    background-size: 500px;
-    background-repeat: no-repeat;
+.formacao {
+    height: 500px;
+    padding-top: 25px;
+    background-image: url("/img/gradient.png"); /* Sua imagem de fundo */
+    background-size: 500px 450px; /* Tamanho da imagem de fundo */
+    background-repeat: no-repeat; /* Não repetir a imagem de fundo */
     background-position: center;
+}
+
+
+.formacao_h1 {
+    font-family: "Preahvihear", sans-serif;
+    font-size: 40px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    line-height: 126.7%;
+    padding-bottom: 20px;
+}
+
+.formacao_apresentacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formacao_row1 , .formacao_row2{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 28px;
+}
+
+.formacao_container {
+    display: flex;
+    width: 460px; /* Largura fixa para os cards */
+    height: 150px; /* Altura fixa para os cards */
+    background: linear-gradient(
+        to bottom right, 
+        #130428 0%, 
+        #38126D 100%
+    );
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    margin: 14px 0;
+    transition: transform 0.3s ease-in-out;
+
+}
+
+.formacao_container:hover{
+    transform: scale(1.03);
+}
+
+.formacao_container::before {
+    content: ""; /* Necessário para criar o pseudo-elemento */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao .skills_container */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* Altura da linha lilás */
+    background-color: #4F228D; /* Cor lilás */
+    border-top-left-radius: 15px; /* Arredonda os cantos da linha lilás */
+    border-top-right-radius: 15px;
+}
+
+.formacao_h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 2%;
+    line-height: 20px;
+    padding-bottom: 8px;
+}
+
+.formacao_paragrafo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #fff;
+    padding-bottom: 8px;
+
+}
+
+.formacao_data{
+    border-radius: 10px;
+    border: #693B93 solid 1px;
+    width: 119px;
+    height: 33px;
+    align-content: center;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: #fff;
+}
+
+.formacao_container_img{
+    height: 100px;
+    padding-right: 20px;
+}
+
+#icon_janela_dev{
+    height: 90px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding: 10px 40px 0 5px;
+}
+
+.skills {
+    position: relative; /* Permite o uso de posicionamento absoluto para o pseudo-elemento */
+    overflow: hidden; /* Garante que o pseudo-elemento não transborde */
+    height: 500px;
+    padding-top: 25px;
+
+}
+
+.skills::before {
+    content: ""; /* Necessário para criar o pseudo-elemento */
+    position: absolute; /* Permite que a camada fique em relação à .skills */
+    top: 0; /* Preenche o topo */
+    left: 0; /* Preenche o lado esquerdo */
+    right: 0; /* Preenche o lado direito */
+    bottom: 0; /* Preenche o fundo */
+    background-image: url("/img/gradient.png"); /* Sua imagem de fundo */
+    background-size: 1300px 400px; /* Tamanho da imagem de fundo */
+    background-repeat: no-repeat; /* Não repetir a imagem de fundo */
+    background-position: center; /* Centralizar a imagem de fundo */
+    opacity: 0.8; /* Define a opacidade da imagem de fundo */
+    z-index: 1; /* Coloca a camada abaixo do conteúdo */
+}
+
+.skills_h1, .skills_apresentacao {
+    position: relative; /* Garante que o texto fique acima do pseudo-elemento */
+    z-index: 2; /* Aumenta o z-index para que fique visível acima da camada */
+}
+
+.skills_apresentacao {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    width: 100%;
 }
 
 .skills_h1{
@@ -221,13 +411,7 @@ body{
     letter-spacing: 2%;
     line-height: 126.7%;
     text-align: center;
-}
-
-.skills_apresentacao {
-    display: flex;
-    flex-direction: column;
-    padding: 50px 64px;
-    width: 100%;
+    padding-bottom: 34px;
 }
 
 .skills_row {
@@ -237,11 +421,24 @@ body{
 }
 
 .skills_container {
-    background-color: rgba(171, 87, 255, 0.2);
-    border-radius: 100px;
+    background: linear-gradient(to bottom right, #130428 0%, #38126D 100%);
+    border-radius: 15px;
     padding: 30px;
-    box-shadow: 0 0 15px #13071f46;
+    box-shadow: 0 0 15px rgba(19, 7, 31, 0.3);
+    position: relative; /* Necessário para o pseudo-elemento funcionar */
     transition: transform 0.3s ease-in-out;
+}
+
+.skills_container::before {
+    content: ""; /* Necessário para criar o pseudo-elemento */
+    position: absolute; /* Posiciona o pseudo-elemento em relação ao .skills_container */
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px; /* Altura da linha lilás */
+    background-color: #4F228D; /* Cor lilás */
+    border-top-left-radius: 15px; /* Arredonda os cantos da linha lilás */
+    border-top-right-radius: 15px;
 }
 
 .skills_container:hover{
@@ -254,10 +451,14 @@ body{
     transition: transform 0.3s ease-in-out;
 }
 
-/*.skills_container img:hover{
-        transform: scale(1.2);
-
-}*/
+.skills_paragrafo{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 2%;
+    text-align: center;
+}
 
 .projetos {
     padding: 20px;
@@ -274,7 +475,7 @@ body{
     padding-bottom: 70px;
 }
 
-.projetos_h2{
+.projetos_h2 , .projetos_2_h2{
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-size: 16px;
@@ -283,7 +484,7 @@ body{
     padding: 0 2%;
 }
 
-.projetos_h1 {
+.projetos_h1 , .projetos_2_h1{
     font-family: "Preahvihear", sans-serif;
     font-size: 30px;
     color: white;
@@ -292,30 +493,15 @@ body{
     padding: 0 2%;
 }
 
-.projetos_2_h2{
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    color: #9857D3;
-    letter-spacing: 2%;
+.projetos_2_h2 , .projetos_2_h1{
     text-align: right;
-    padding: 0 2%;
-}
-
-.projetos_2_h1{
-    font-family: "Preahvihear", sans-serif;
-    font-size: 30px;
-    color: white;
-    font-weight: 400;
-    letter-spacing: 2%;
-    text-align: right;
-    padding: 0 2%;
 }
 
 .bloco_texto {
+    width: 400px;
     flex: 1;
     padding: 2px;
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo semi-transparente */
+    background-color: rgba(216, 155, 255, 0.1); /* Fundo semi-transparente */
     backdrop-filter: blur(10px); /* Desfoca o fundo */
     -webkit-backdrop-filter: blur(10px); /* Para suporte ao Safari */
     border-radius: 10px; /* Arredonda os cantos do contêiner */
@@ -333,6 +519,21 @@ body{
     margin: 0;
 }
 
+.projetos_container_links{
+    display: flex;
+    gap: 10px;
+    padding: 20px 20px 0 20px;
+    justify-content: center;
+}
+
+.projeto_links , .projeto_links_full{
+    width: 195px;
+}
+
+.projeto_links_full{
+    background-color: #4F228D;
+}
+
 .projetos_imagem{
     position: relative;
     display: inline-block;
@@ -342,20 +543,549 @@ body{
     position: absolute;
     top: 40%;
     left: 50%;
-    width: 600px;
-    height: 500px;
+    width: 800px;
+    height: 600px;
     transform: translate(-50%, -50%);
     z-index: -1;
 }
 
 .projetos_print {
-    max-width: 400px;
+    max-width: 600px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
+.contato{
+    display: flex;
+    padding-top: 25px;
+    padding-bottom: 50px;
+    gap: 50px;
+    justify-content: center;
+}
+
+.contato_img img{
+    height: 200px;
+}
+
+.contato_container{
+    padding-bottom: 50px;
+}
+
+.contato_h2{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+}
+
+.contato_paragrafo{
+    font-family: "Preahvihear", sans-serif;
+    font-size: 17px;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 2%;
+    padding-bottom: 25px;
+    width: 600px;
+}
+
+.contato_container_links{
+    display: flex;
+    gap: 10px;
+}
+
+.contato_links , .projeto_links , .projeto_links_full{
+    border: #4F228D 1px solid;
+    border-radius: 10px;
+    padding: 5px; /* Aumentar um pouco o padding para melhor espaçamento */
+    display: flex; /* Para usar flexbox */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    transition: background-color 0.3s;
+}
+
+.contato_links{
+    width: 150px;
+}
+
+.contato_links:hover{
+    background-color: rgba(216, 155, 255, 0.3);
+}
+
+.contato_links a , .projeto_links a , .projeto_links_full a{
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+    display: flex; /* Para usar flexbox no link também */
+    align-items: center; /* Alinha verticalmente */
+}
+
+.contato_links img {
+    height: 30px;
+    margin-right: 5px; /* Adiciona um espaço entre a imagem e o texto */
+}
+
+
 .rodape{
     background-color: #1a0b2e;
-    height: 65px;
+    height: 80px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rodape p{
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: rgba(216, 155, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+    /* Estilos para tablets */
+    .cabecalho{
+        width: 768px;
+    }
+    .cabecalho__menu__links {
+        gap: 20px; /* Reduz o espaço entre os links */
+        padding-right: 20px; /* Ajusta o padding */
+    }
+
+    .cabecalho__menu_logo {
+        padding: 0 20px; /* Ajusta o padding da logo */
+    }
+
+    .hello {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hello_h1 {
+        font-size: 37px; /* Ajusta o tamanho do título */
+    }
+
+    .hello_paragrafo {
+        font-size: 15px; /* Ajusta o tamanho do parágrafo */
+    }
+
+    .hello_h2 {
+        font-size: 11px; /* Ajusta o tamanho do h2 */
+    }
+
+    .hello_memoji {
+        width: 120px; /* Ajusta o tamanho da imagem */
+    }
+
+    .hello_radial {
+        width: 200px; /* Ajusta o tamanho do fundo radial */
+        height: 200px;
+    }
+
+    .hello_arrow {
+        width: 70px; /* Ajusta o tamanho da seta */
+        top: -70px; /* Ajusta a posição */
+        left: 60px; /* Ajuste conforme necessário */
+    }
+
+    .hello_seta_texto_paragrafo {
+        font-size: 12px; /* Ajusta o tamanho do texto da seta */
+    }
+    
+    .apresentacao_container {
+         display: flex; /* Adiciona display flex */
+        flex-direction: column; /* Organiza em coluna */
+        justify-content: center;
+    }
+
+    .apresentacao_h1 {
+        font-size: 32px; /* Ajusta o tamanho do título */
+    }
+
+    .apresentacao_h2 {
+        font-size: 18px; /* Ajusta o tamanho do subtítulo */
+    }
+
+    .apresentacao_paragrafo {
+        font-size: 15px; /* Ajusta o tamanho do parágrafo */
+        width: 90%; /* Ajusta a largura para ficar mais responsivo */
+        padding: 20px 0; /* Reduz o padding */
+    }
+
+    .formacao {
+        height: 400px; /* Reduz a altura */
+        background-size: 300px 250px; /* Ajusta o tamanho da imagem de fundo */
+        display: flex; /* Adiciona display flex */
+        flex-direction: column; /* Organiza em coluna */
+        align-items: center; /* Centraliza os itens horizontalmente */
+        justify-content: center;
+    }
+
+    .formacao_h1 {
+        font-size: 28px; /* Reduz o tamanho do título */
+        padding-bottom: 15px; /* Ajusta o padding */
+    }
+
+    .formacao_container {
+        width: 50%; /* Ajusta a largura para ser responsiva */
+        height: 140px; /* Ajusta a altura dos cards */
+        padding: 20px; /* Reduz o padding */
+    }
+
+    .formacao_h2 {
+        font-size: 16px; /* Reduz o tamanho do subtítulo */
+    }
+
+    .formacao_paragrafo {
+        font-size: 12px; /* Reduz o tamanho do parágrafo */
+    }
+
+    .formacao_data {
+        width: 100px; /* Ajusta a largura do botão de data */
+        height: 24px; /* Ajusta a altura */
+        font-size: 12px; /* Reduz o tamanho da fonte */
+    }
+
+    .formacao_container_img , #icon_janela_dev{
+        display: none;
+    }
+
+    .skills {
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        padding-top: 25px;
+        padding-bottom: 25px; /* Adiciona espaço abaixo */
+    }
+    
+    .skills::before {
+        background-size: 800px 300px; /* Tamanho da imagem de fundo */
+        opacity: 0.8;
+    }
+    
+    .skills_h1 {
+        font-size: 32px; /* Reduz o tamanho do título para se ajustar melhor */
+        padding-bottom: 20px; /* Ajusta o padding */
+    }
+    
+    .skills_row {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas */
+        justify-content: center; /* Centraliza os itens */
+        gap: 20px;
+    }
+    
+    .skills_container {
+        display: flex; /* Ativa o flexbox */
+        flex-direction: column; /* Organiza os itens em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        justify-content: center; /* Centraliza verticalmente, se necessário */
+        width: calc(30% - 20px); /* Define a largura para 2 itens na linha inferior em telas menores */
+        max-width: 300px; /* Limita a largura máxima */
+        padding: 20px; /* Reduz o padding */
+    }
+    
+    .skills_container img {
+        height: 80px; /* Ajusta a altura da imagem */
+        margin-bottom: 10px; /* Espaçamento abaixo da imagem, se necessário */
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .projetos_1, .projetos_2 {
+        display: flex;
+        align-items: center; /* Centraliza os itens */
+        padding-bottom: 70px;
+        margin-bottom: 0;
+    }
+
+    .projetos_1{
+        flex-direction: column-reverse;
+    }
+
+    .projetos_2{
+        flex-direction: column;
+    }
+
+    .projetos_h1 , .projetos_2_h1, .projetos_2_h2 , .projetos_h2{
+        text-align: center;
+    }
+
+    .bloco_texto{
+        width: 600px;
+    }
+    
+    .projetos_imagem {
+        max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+        height: auto; /* Mantém a proporção */
+        padding: 20px 0;
+    }
+    
+    .projetos_container_links {
+        display: flex;
+        gap: 10px;
+        justify-content: center; /* Centraliza os links */
+        padding: 20px 5px; /* Ajuste o padding conforme necessário */
+    }
+
+    .contato {
+        align-items: center; /* Centraliza os itens */
+        gap: 20px; /* Reduz o gap entre os itens */
+        padding-left: 50px;    }
+
+    .contato_img img {
+        height: 150px; /* Reduz a altura da imagem */
+    }
+
+    .contato_h2 {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    .contato_paragrafo {
+        font-size: 15px; /* Reduz o tamanho do parágrafo */
+        width: 90%; /* Define uma largura mais responsiva */
+    }
+
+    .contato_links {
+        width: 120px; /* Reduz a largura dos links */
+    }
+    
+}
+
+@media (max-width: 480px) {
+    /* Estilos para celulares */
+    .cabecalho {
+        width: 100%; /* Adapta para a largura total */
+    }
+    .cabecalho__menu__links {
+        gap: 10px; /* Reduz o espaço entre os links */
+        padding-right: 20px; /* Ajusta o padding */
+    }
+
+    .cabecalho__menu__link{
+        font-size: 12px;
+    }
+
+    .cabecalho__menu_logo {
+        width: 45px;
+        height: auto;
+        padding: 0 10px; 
+        margin-left: 20px;
+    }
+
+    .hello {
+        align-items: center;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+
+    .hello_h1 {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    .hello_paragrafo {
+        font-size: 14px;
+    }
+
+    .hello_h2 {
+        font-size: 10px;
+        width: 200px;
+    }
+
+    .hello_memoji {
+        width: 80px; /* Ajusta o tamanho da imagem */
+    }
+
+    .hello_radial {
+        width: 150px; /* Ajusta o tamanho do fundo radial */
+        height: 150px;
+    }
+
+    .hello_arrow {
+        width: 50px; /* Ajusta o tamanho da seta */
+        top: -45px; /* Ajusta a posição */
+        left: 30px; /* Ajuste conforme necessário */
+    }
+
+    .hello_seta_texto_paragrafo {
+        font-size: 8px; /* Ajusta o tamanho do texto da seta */
+    }
+
+    .apresentacao_container {
+        display: flex; /* Adiciona display flex */
+        justify-content: center;
+        align-items: center; 
+        padding: 0 20px;
+    }
+
+    .apresentacao_h1 {
+        width: 90%;
+        font-size: 23px; 
+    }
+
+    .apresentacao_h2 {
+        width: 90%;
+        font-size: 14px; /* Ajusta o tamanho do subtítulo */
+    }
+
+    .apresentacao_paragrafo {
+        font-size: 12px; /* Ajusta o tamanho do parágrafo */
+        width: 90%; /* Ajusta a largura para ficar mais responsivo */
+        padding: 10px 0; /* Reduz o padding */
+    }
+
+    .formacao {
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        background-size: 150px 120px; /* Ajusta o tamanho da imagem de fundo */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+
+    }
+
+    .formacao_h1 {
+        font-size: 24px; /* Reduz o tamanho do título */
+        padding-bottom: 10px; /* Ajusta o padding */
+    }
+
+    .formacao_container {
+        width: 90%; /* Ajusta a largura para ser responsiva */
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .formacao_h2 {
+        font-size: 14px; /* Reduz o tamanho do subtítulo */
+    }
+
+    .formacao_paragrafo {
+        font-size: 12px; /* Reduz o tamanho do parágrafo */
+    }
+
+    .formacao_data {
+        width: 80px; /* Ajusta a largura do botão de data */
+        height: 20px; /* Ajusta a altura */
+        font-size: 12px; /* Reduz o tamanho da fonte */
+    }
+
+    .formacao_container_img, #icon_janela_dev {
+        display: none;
+    }
+
+    .skills {
+        height: auto; /* Permite que a altura se ajuste ao conteúdo */
+        padding: 15px; /* Reduz o padding */
+    }
+
+    .skills::before {
+        background-size: 400px 400px;
+    }
+
+    .skills_h1 {
+        font-size: 24px; /* Reduz o tamanho do título para se ajustar melhor */
+        padding-bottom: 10px; /* Ajusta o padding */
+    }
+
+    .skills_row {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os itens se ajustem em várias linhas */
+        justify-content: center; /* Centraliza os itens */
+        gap: 10px; /* Reduz o gap entre os itens */
+    }
+
+    .skills_container {
+        display: flex; /* Ativa o flexbox */
+        flex-direction: column; /* Organiza os itens em coluna */
+        align-items: center; /* Centraliza horizontalmente */
+        justify-content: center; /* Centraliza verticalmente, se necessário */
+        width: calc(45% - 10px); /* Define a largura para 2 itens na linha */
+        max-width: 150px; /* Limita a largura máxima */
+        padding: 10px; /* Reduz o padding */
+    }
+
+    .skills_container img {
+        height: 60px; /* Ajusta a altura da imagem */
+        margin-bottom: 5px; /* Espaçamento abaixo da imagem */
+    }
+
+    .projetos_1, .projetos_2 {
+        display: flex;
+        align-items: center; /* Centraliza os itens */
+        padding-bottom: 40px; /* Ajusta o padding */
+        margin-bottom: 0;
+    }
+
+    .projetos_h1, .projetos_2_h1{
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .projetos_2_h2, .projetos_h2 {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .projetos_paragrafo{
+        padding: 4px;
+        font-size: 14px;
+    }
+
+    .bloco_texto {
+        width: 300px; /* Largura fixa */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        box-sizing: border-box; /* Inclui padding e bordas nas dimensões totais */
+        padding: 10px; /* Padding opcional */    }
+
+    .projetos_imagem {
+        max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+        height: auto; /* Mantém a proporção */
+        padding: 10px 0; /* Reduz o padding */
+    }
+
+    .projetos_radial{
+        width: 420px;
+        height: 300px;
+    }
+
+    .projetos_print{
+        width: 300px;
+    }
+
+    .projetos_container_links {
+        display: flex;
+        width: 300px;
+        gap: 5px; /* Reduz o gap entre os links */
+        justify-content: center; /* Centraliza os links */
+        padding: 10px 0; /* Ajuste o padding conforme necessário */
+    }
+
+    .contato {
+        align-items: center; /* Centraliza os itens */
+        gap: 10px; /* Reduz o gap entre os itens */
+        padding: 20px; /* Ajusta o padding */
+    }
+
+    .contato_img img {
+        display: none;
+    }
+
+    .contato_h2 {
+        font-size: 20px; /* Reduz o tamanho do título */
+    }
+
+    .contato_paragrafo {
+        font-size: 12px; /* Reduz o tamanho do parágrafo */
+        width: 90%; /* Define uma largura mais responsiva */
+    }
+
+    .contato_links {
+        width: 110px; /* Reduz a largura dos links */
+    }
+
+    .contato_links a{
+        font-size: 12px;
+
+    }
 }
