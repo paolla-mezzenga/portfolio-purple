@@ -957,11 +957,11 @@ body{
     }
 
     .formacao_h2 {
-        font-size: 14px; /* Reduz o tamanho do subtítulo */
+        font-size: 12px; /* Reduz o tamanho do subtítulo */
     }
 
     .formacao_paragrafo {
-        font-size: 12px; /* Reduz o tamanho do parágrafo */
+        font-size: 10px; /* Reduz o tamanho do parágrafo */
     }
 
     .formacao_data {
