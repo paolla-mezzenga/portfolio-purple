@@ -151,12 +151,12 @@ body{
 }
 
 .hello_texto{
-    width: 400px;
+    width: 500px;
 }
 
 .hello_paragrafo{
     font-family: "Preahvihear", sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     color: white;
     font-weight: 400;
     letter-spacing: 2%;
@@ -190,38 +190,40 @@ body{
   }
   
   .hello_h1_destaque:before {
-    left: -0.05em;
-    top: 0.05em;
+    left: 0.01em;
+    top: 0.03em;
     border-right-color: transparent;
     border-color: white;
     width: 100%;
-    height: 1.3em;
-    transform: rotate(3deg);
+    height: 1.4em;
+    transform: rotate(5deg);
   }
   
   .hello_h1_destaque:after {
-    left: -0.1em;
-    top: 0.1em;
+    left: 0.01em;
+    top: 0.03em;
     border-left-color: transparent;
     border-top-color: transparent;
     border-color: white;
     width: 100%;
-    height: 1.2em;
-    transform: rotate(-3deg);
+    height: 1.4em;
+    transform: rotate(-5deg);
   }
 
 .hello_h2{
     font-family: "Preahvihear", sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     color: white;
     font-weight: 400;
     letter-spacing: 2%;
+    padding-top: 5px;
 }
 
 .apresentacao{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding-top: 25px;
 
 }
@@ -495,6 +497,7 @@ body{
 
 .projetos_2_h2 , .projetos_2_h1{
     text-align: right;
+    padding: 0;
 }
 
 .bloco_texto {
