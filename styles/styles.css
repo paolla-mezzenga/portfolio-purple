@@ -537,6 +537,10 @@ body{
     background-color: #4F228D;
 }
 
+.projeto_links_full:hover{
+    background-color: #441e78;
+}
+
 .projetos_imagem{
     position: relative;
     display: inline-block;
@@ -598,12 +602,10 @@ body{
 }
 
 .contato_links , .projeto_links , .projeto_links_full{
-    border: #4F228D 1px solid;
+    border: #441e78 1px solid;
     border-radius: 10px;
     padding: 5px; /* Aumentar um pouco o padding para melhor espaçamento */
-    display: flex; /* Para usar flexbox */
-    align-items: center; /* Alinha verticalmente */
-    justify-content: center; /* Alinha horizontalmente */
+    display: block;
     transition: background-color 0.3s;
 }
 
@@ -621,13 +623,14 @@ body{
     font-weight: 500;
     font-size: 15px;
     color: white;
-    display: flex; /* Para usar flexbox no link também */
+    display: flex; /* Para usar flexbox */
     align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
 }
 
 .contato_links img {
     height: 30px;
-    margin-right: 5px; /* Adiciona um espaço entre a imagem e o texto */
+    margin-right: 10px; /* Adiciona um espaço entre a imagem e o texto */
 }
 
 
